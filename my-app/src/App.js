@@ -1,7 +1,6 @@
 import React from 'react'
 import MyResponsiveLine from './line'
 import MyResponsiveLine2 from './nivoLine'
-import './App.css'
 
 const data = [
   {
