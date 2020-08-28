@@ -22,15 +22,15 @@ export default function MyResponsiveLine({ data }) {
         curve="linear"
         axisBottom={{
           format: '%b %Y',
-          tickValues: 'every 3 months',
-          // tickValues: data[0].data.map(point => point.x),
+          // tickValues: 'every 3 months',
+          tickValues: data[0].data.map((point) => point.x),
         }}
         axisLeft={{
           tickValues: 5,
           legendPosition: 'middle',
           format: '~s',
         }}
-        // gridXValues={data[0].data.map(point => point.x)}
+        gridXValues={data[0].data.map((point) => point.x)}
         enableSlices="x"
       />
     </div>

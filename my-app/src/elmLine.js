@@ -1,5 +1,6 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
+import styled from 'styled-components'
 
 export default function ElmLine({ data, legend, color }) {
   return (
@@ -8,7 +9,7 @@ export default function ElmLine({ data, legend, color }) {
       margin={{ top: 50, right: 110, bottom: 80, left: 60 }}
       xScale={{ type: 'point' }}
       yScale={{
-        type: 'linear',
+        type: 'time',
         min: 'auto',
         max: 'auto',
         stacked: true,
@@ -41,27 +42,39 @@ export default function ElmLine({ data, legend, color }) {
       pointLabel="y"
       pointLabelYOffset={-12}
       useMesh
-      animate
+      tooltip={({ id, value, color }) => (
+        <strong style={{ color }}>
+          {id}: {value}
+        </strong>
+      )}
       theme={{
-        axis: {
-          ticks: {
-            tickColor: '#eee',
-            text: {
-              textColor: '#eee',
-              fontSize: '12px',
-            },
-          },
-        },
-        fontFamily: 'futura',
         tooltip: {
           container: {
-            fontFamily: 'futura',
-            fontSize: '9px',
-            color: 'black',
-            background: 'white',
+            background: '#333',
           },
         },
       }}
+      animate
+      // theme={{
+      //   axis: {
+      //     ticks: {
+      //       tickColor: '#eee',
+      //       text: {
+      //         textColor: '#eee',
+      //         fontSize: '12px',
+      //       },
+      //     },
+      //   },
+      //   fontFamily: 'futura',
+      // tooltip: {
+      //   container: {
+      //     fontFamily: 'futura',
+      //     fontSize: '9px',
+      //     color: 'black',
+      //     background: 'white',
+      //   },
+      // },
+      // }}
       legends={[
         {
           anchor: 'bottom-right',
