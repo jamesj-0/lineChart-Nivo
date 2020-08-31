@@ -4,6 +4,7 @@ import NivoLine from './nivoLine'
 import windowSize from './hooks/windowSize'
 import ElmLine from './elmLine'
 import styled from 'styled-components'
+import SimpleChart from './reactTimeSeriesBar'
 
 const Container = styled.section`
   width: 50vw;
@@ -110,7 +111,8 @@ const data6 = [
 function App() {
   return (
     <>
-      <MyResponsiveLine data={data} />
+      <SimpleChart />
+      {/* <MyResponsiveLine data={data} />
       <NivoLine
         dummyData={data6}
         type={{ metric: 'day', interval: '5' }}
@@ -120,7 +122,7 @@ function App() {
           height: windowSize().height * 0.5 || window.innerHeight * 0.5,
           width: windowSize().width * 0.6 || window.innerWidth * 0.6,
         }}
-      />
+      /> */}
     </>
   )
 }
